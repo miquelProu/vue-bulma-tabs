@@ -4,7 +4,7 @@ export default {
     props: {
         orientation: {
             default: 'horizontal'
-        }  
+        }
     },
     data() {
         return {
@@ -15,8 +15,9 @@ export default {
         this.tabs = this.$children;
     },
     methods: {
-        changeTab(tab) {
+        changeTab(tab, index) {
             this.tabs.map((t) => t.isActive = t.name == tab.name)
+            this.$emit('changetab', {tab: tab, idx: index});
         }
     }
 }
@@ -26,10 +27,10 @@ export default {
     <div :class="orientation">
         <div class="tabs">
             <ul>
-                <li v-for="(tab, index) in tabs" 
+                <li v-for="(tab, index) in tabs"
                     :class="{'is-active': tab.isActive}"
                     :key="index">
-                    <a @click="changeTab(tab)">
+                    <a @click="changeTab(tab, index)">
                         {{ tab.name }}
                     </a>
                 </li>
@@ -52,7 +53,7 @@ export default {
         min-height: 540px;
         box-orient: horizontal;
     }
-    
+
     .vertical .tabs {
         width: 20%;
         -ms-flex: 0 100px;
