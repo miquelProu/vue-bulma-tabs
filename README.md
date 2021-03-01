@@ -52,9 +52,9 @@ export default {
 | selected  | true or false   | Boolean | no        | false   |
 
 
-###Events
+### Events
 
-####Tabs
+#### Tabs
 
 | Event Name   |  Values Returned      | 
 |-------------|----------------------|
