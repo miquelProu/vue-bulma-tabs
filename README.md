@@ -2,6 +2,8 @@
 
 Vue.js wrapper for [Bulma Tabs](https://bulma.io/documentation/components/tabs/).
 
+### Fork add *change Tabs* event ('changetab')
+
 ### Installation
 
 ```sh 
@@ -48,3 +50,12 @@ export default {
 |-----------|-----------------|---------|-----------|---------|
 | name      | any             | String  | yes       |         |
 | selected  | true or false   | Boolean | no        | false   |
+
+
+###Events
+
+####Tabs
+
+| Event Name   |  Values Returned      | 
+|-------------|----------------------|
+| changetab | Index changed Tab, Tabs | 
